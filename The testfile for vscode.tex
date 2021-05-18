@@ -1,0 +1,47 @@
+\documentclass[fontset=windows]{article}
+\usepackage[margin=1in]{geometry}%设置边距，符合Word设定
+\usepackage{ctex}
+\usepackage{setspace}
+\usepackage{lipsum}
+\usepackage{graphicx}%插入图片
+\graphicspath{{Figures/}}%文章所用图片在当前目录下的 Figures目录
+
+\usepackage{hyperref} % 对目录生成链接，注：该宏包可能与其他宏包冲突，故放在所有引用的宏包之后
+\hypersetup{colorlinks = true,  % 将链接文字带颜色
+	bookmarksopen = true, % 展开书签
+	bookmarksnumbered = true, % 书签带章节编号
+	pdftitle = This is a testfile for vscode, % 标题
+	pdfauthor =Ali-loner} % 作者
+\bibliographystyle{plain}% 参考文献引用格式
+\newcommand{\upcite}[1]{\textsuperscript{\cite{#1}}}
+
+\renewcommand{\contentsname}{\centerline{Contents}} %经过设置word格式后，将目录标题居中
+
+
+\title{\heiti\zihao{2} This is a testfile for vscode}
+\author{\songti Ali-loner}
+\date{2020.08.02}
+
+
+\begin{document}
+	\maketitle
+	\thispagestyle{empty}
+
+\begin{abstract}
+	\lipsum[2]
+\end{abstract}
+
+\tableofcontents
+
+\section{This is a section}
+Hello world! Hello Ali! As shown in figure \ref{1}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[scale=0.2]{Ali.jpg}
+	\caption{this is Ali}
+	\label{1}
+\end{figure}
+
+这句话是测试能否进行引用及支持中文\upcite{1}。
+\bibliography{books}
+\end{document}
